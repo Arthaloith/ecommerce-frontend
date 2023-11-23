@@ -2,7 +2,7 @@ import React from 'react'
 import { WrapperInputStyle } from './style'
 
 const InputForm = (props) => {
-    const { placeholder = 'Nhập text', ...rests } = props
+    const { placeholder = 'Enter text...', ...rests } = props
     const handleOnchangeInput = (e) => {
         props.onChange(e.target.value)
     }

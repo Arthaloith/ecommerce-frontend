@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux'
 import { useRef } from 'react'
 import { useMutationHooks } from '../../hooks/useMutationHook'
 import * as UserService from '../../services/UserService'
-import { useIsFetching, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useIsFetching, useQueryClient } from '@tanstack/react-query'
 import { DeleteOutlined, EditOutlined, SearchOutlined } from '@ant-design/icons'
 
 const AdminUser = () => {
@@ -127,12 +127,9 @@ const AdminUser = () => {
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
-    // setSearchText(selectedKeys[0]);
-    // setSearchedColumn(dataIndex);
   };
   const handleReset = (clearFilters) => {
     clearFilters();
-    // setSearchText('');
   };
 
   const getColumnSearchProps = (dataIndex) => ({
@@ -191,21 +188,7 @@ const AdminUser = () => {
       if (visible) {
         setTimeout(() => searchInput.current?.select(), 100);
       }
-    },
-    // render: (text) =>
-    //   searchedColumn === dataIndex ? (
-    //     // <Highlighter
-    //     //   highlightStyle={{
-    //     //     backgroundColor: '#ffc069',
-    //     //     padding: 0,
-    //     //   }}
-    //     //   searchWords={[searchText]}
-    //     //   autoEscape
-    //     //   textToHighlight={text ? text.toString() : ''}
-    //     // />
-    //   ) : (
-    //     text
-    //   ),
+    }
   });
 
   const columns = [
@@ -345,7 +328,7 @@ const AdminUser = () => {
           };
         }} />
       </div>
-      <DrawerComponent title='Chi tiết người dùng' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
+      <DrawerComponent title='User details' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
         <Loading isLoading={isLoadingUpdate || isLoadingUpdated}>
 
           <Form
@@ -413,7 +396,7 @@ const AdminUser = () => {
           </Form>
         </Loading>
       </DrawerComponent>
-      <ModalComponent title="Xóa người dùng" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteUser}>
+      <ModalComponent title="Delete user" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteUser}>
         <Loading isLoading={isLoadingDeleted}>
           <div>Bạn có chắc xóa tài khoản này không?</div>
         </Loading>

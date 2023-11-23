@@ -249,7 +249,7 @@ const PaymentPage = () => {
             <WrapperLeft>
               <WrapperInfo>
                 <div>
-                  <Lable>Delivery service</Lable>
+                  <Lable style={{ fontWeight: 'bold', fontSize: '20px' }}>Delivery service</Lable>
                   <WrapperRadio onChange={handleDilivery} value={delivery}>
                     <Radio value="fast"><span style={{ color: '#ea8500', fontWeight: 'bold' }}>FAST</span> Amogus deliveries</Radio>
                     <Radio value="gojek"><span style={{ color: '#ea8500', fontWeight: 'bold' }}>GO_JEK</span> Sus deliveries</Radio>
@@ -258,7 +258,7 @@ const PaymentPage = () => {
               </WrapperInfo>
               <WrapperInfo>
                 <div>
-                  <Lable>Payment method</Lable>
+                  <Lable style={{ fontWeight: 'bold', fontSize: '20px' }}>Payment method</Lable>
                   <WrapperRadio onChange={handlePayment} value={payment}>
                     <Radio value="later_money"> Cash-on-delivery</Radio>
 

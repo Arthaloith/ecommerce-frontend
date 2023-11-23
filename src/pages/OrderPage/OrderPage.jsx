@@ -202,10 +202,10 @@ const OrderPage = () => {
   return (
     <div style={{ background: '#f5f5fa', with: '100%', height: '100vh' }}>
       <div style={{ height: '100%', width: '1270px', margin: '0 auto' }}>
-        <h3 style={{ fontWeight: 'bold' }}>Giỏ hàng</h3>
+        <h3 style={{ fontWeight: 'bold' }}>Cart</h3>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <WrapperLeft>
-            <h4>Phí giao hàng</h4>
+            <h4>Shipping Fees Milestone</h4>
             <WrapperStyleHeaderDilivery>
               <StepComponent items={itemsDelivery} current={diliveryPriceMemo === 10000
                 ? 2 : diliveryPriceMemo === 20000 ? 1
@@ -282,7 +282,7 @@ const OrderPage = () => {
                 </div>
               </WrapperInfo>
               <WrapperTotal>
-                <span>Grand Total</span>
+                <span style={{ fontWeight: 'bold' }}>Grand Total</span>
                 <span style={{ display: 'flex', flexDirection: 'column' }}>
                   <span style={{ color: 'rgb(254, 56, 52)', fontSize: '24px', fontWeight: 'bold' }}>{convertPrice(totalPriceMemo)}</span>
                   <span style={{ color: '#000', fontSize: '11px' }}>(Tax included (if applicable))</span>

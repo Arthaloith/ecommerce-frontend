@@ -173,12 +173,9 @@ const AdminProduct = () => {
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
-    // setSearchText(selectedKeys[0]);
-    // setSearchedColumn(dataIndex);
   };
   const handleReset = (clearFilters) => {
     clearFilters();
-    // setSearchText('');
   };
 
   const getColumnSearchProps = (dataIndex) => ({
@@ -237,21 +234,7 @@ const AdminProduct = () => {
       if (visible) {
         setTimeout(() => searchInput.current?.select(), 100);
       }
-    },
-    // render: (text) =>
-    //   searchedColumn === dataIndex ? (
-    //     // <Highlighter
-    //     //   highlightStyle={{
-    //     //     backgroundColor: '#ffc069',
-    //     //     padding: 0,
-    //     //   }}
-    //     //   searchWords={[searchText]}
-    //     //   autoEscape
-    //     //   textToHighlight={text ? text.toString() : ''}
-    //     // />
-    //   ) : (
-    //     text
-    //   ),
+    }
   });
 
 
@@ -523,7 +506,7 @@ const AdminProduct = () => {
               </Form.Item>
             )}
             <Form.Item
-              label="Count inStock"
+              label="Count in Stock"
               name="countInStock"
               rules={[{ required: true, message: 'Please input your count inStock!' }]}
             >
@@ -563,7 +546,7 @@ const AdminProduct = () => {
               rules={[{ required: true, message: 'Please input your count image!' }]}
             >
               <WrapperUploadFile onChange={handleOnchangeAvatar} maxCount={1}>
-                <Button >Select File</Button>
+                <Button >Upload File</Button>
                 {stateProduct?.image && (
                   <img src={stateProduct?.image} style={{
                     height: '60px',
@@ -583,7 +566,7 @@ const AdminProduct = () => {
           </Form>
         </Loading>
       </ModalComponent>
-      <DrawerComponent title='Chi tiết sản phẩm' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
+      <DrawerComponent title='Product details' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
         <Loading isLoading={isLoadingUpdate || isLoadingUpdated}>
 
           <Form
@@ -650,7 +633,7 @@ const AdminProduct = () => {
               rules={[{ required: true, message: 'Please input your count image!' }]}
             >
               <WrapperUploadFile onChange={handleOnchangeAvatarDetails} maxCount={1}>
-                <Button >Select File</Button>
+                <Button >Upload File</Button>
                 {stateProductDetails?.image && (
                   <img src={stateProductDetails?.image} style={{
                     height: '60px',
@@ -670,9 +653,9 @@ const AdminProduct = () => {
           </Form>
         </Loading>
       </DrawerComponent>
-      <ModalComponent title="Xóa sản phẩm" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteProduct}>
+      <ModalComponent title="Delete product" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteProduct}>
         <Loading isLoading={isLoadingDeleted}>
-          <div>Bạn có chắc xóa sản phẩm này không?</div>
+          <div>Are you sure you want to delete this product?</div>
         </Loading>
       </ModalComponent>
     </div>
