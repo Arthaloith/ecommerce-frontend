@@ -43,7 +43,7 @@ const TableComponent = (props) => {
         }}
           onClick={handleDeleteAll}
         >
-          Xóa tất cả
+          Delete selected
         </div>
       )}
       <button onClick={exportExcel}>Export Excel</button>

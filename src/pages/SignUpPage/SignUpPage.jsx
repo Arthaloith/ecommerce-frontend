@@ -123,11 +123,11 @@ const SignUpPage = () => {
               styleTextButton={{ color: '#fff', fontSize: '15px', fontWeight: '700' }}
             ></ButtonComponent>
           </Loading>
-          <p>Bạn đã có tài khoản? <WrapperTextLight onClick={handleNavigateSignIn}> Đăng nhập</WrapperTextLight></p>
+          <p>Already have an account? <WrapperTextLight onClick={handleNavigateSignIn}> Login</WrapperTextLight></p>
         </WrapperContainerLeft>
         <WrapperContainerRight>
           <Image src={imageLogo} preview={false} alt="iamge-logo" height="203px" width="203px" />
-          <h4>Mua sắm tại LTTD</h4>
+          <h4>Shopping at amogus sus</h4>
         </WrapperContainerRight>
       </div>
     </div >

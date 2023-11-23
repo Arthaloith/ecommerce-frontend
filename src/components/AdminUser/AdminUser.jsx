@@ -398,7 +398,7 @@ const AdminUser = () => {
       </DrawerComponent>
       <ModalComponent title="Delete user" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteUser}>
         <Loading isLoading={isLoadingDeleted}>
-          <div>Bạn có chắc xóa tài khoản này không?</div>
+          <div>Are you sure you want to delete this user?</div>
         </Loading>
       </ModalComponent>
     </div>

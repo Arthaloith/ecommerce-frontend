@@ -489,8 +489,6 @@ const AdminProduct = () => {
             >
               <Select
                 name="type"
-                // defaultValue="lucy"
-                // style={{ width: 120 }}
                 value={stateProduct.type}
                 onChange={handleChangeSelect}
                 options={renderOptions(typeProduct?.data?.data)}
