@@ -38,10 +38,6 @@ const ProductDetailsComponent = ({ idProduct }) => {
     };
 
     useEffect(() => {
-        initFacebookSDK();
-    }, []);
-
-    useEffect(() => {
         const orderRedux = order?.orderItems?.find(
             (item) => item.product === productDetails?._id
         );
