@@ -11,7 +11,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { addOrderProduct, resetOrder } from '../../redux/slides/orderSlide'
-import { convertPrice, initFacebookSDK } from '../../utils'
+import { convertPrice } from '../../utils'
 import { useEffect } from 'react'
 import * as message from '../Message/Message'
 
