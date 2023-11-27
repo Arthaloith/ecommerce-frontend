@@ -170,28 +170,6 @@ const PaymentPage = () => {
     setIsOpenModalUpdateInfo(false)
   }
 
-  // const onSuccessPaypal = (details, data) => {
-  //   mutationAddOrder.mutate(
-  //     {
-  //       token: user?.access_token,
-  //       orderItems: order?.orderItemsSlected,
-  //       fullName: user?.name,
-  //       address: user?.address,
-  //       phone: user?.phone,
-  //       city: user?.city,
-  //       paymentMethod: payment,
-  //       itemsPrice: priceMemo,
-  //       shippingPrice: diliveryPriceMemo,
-  //       totalPrice: totalPriceMemo,
-  //       user: user?.id,
-  //       isPaid: true,
-  //       paidAt: details.update_time,
-  //       email: user?.email
-  //     }
-  //   )
-  // }
-
-
   const handleUpdateInforUser = () => {
     const { name, address, city, phone } = stateUserDetails
     if (name && address && city && phone) {
