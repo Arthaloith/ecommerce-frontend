@@ -16,7 +16,6 @@ import * as message from '../../components/Message/Message'
 import { updateUser } from '../../redux/slides/userSlide';
 import { useNavigate } from 'react-router-dom';
 import { removeAllOrderProduct } from '../../redux/slides/orderSlide';
-// import { PayPalButton } from "react-paypal-button-v2";
 import * as PaymentService from '../../services/PaymentService'
 
 const PaymentPage = () => {
@@ -94,7 +93,6 @@ const PaymentPage = () => {
   const handleAddOrder = () => {
     if (user?.access_token && order?.orderItemsSlected && user?.name
       && user?.address && user?.phone && user?.city && priceMemo && user?.id) {
-      // eslint-disable-next-line no-unused-expressions
       mutationAddOrder.mutate(
         {
           token: user?.access_token,
@@ -147,7 +145,7 @@ const PaymentPage = () => {
         arrayOrdered.push(element.product)
       });
       dispatch(removeAllOrderProduct({ listChecked: arrayOrdered }))
-      message.success('Đặt hàng thành công')
+      message.success('Order placed successfully')
       navigate('/orderSuccess', {
         state: {
           delivery,
@@ -172,26 +170,26 @@ const PaymentPage = () => {
     setIsOpenModalUpdateInfo(false)
   }
 
-  const onSuccessPaypal = (details, data) => {
-    mutationAddOrder.mutate(
-      {
-        token: user?.access_token,
-        orderItems: order?.orderItemsSlected,
-        fullName: user?.name,
-        address: user?.address,
-        phone: user?.phone,
-        city: user?.city,
-        paymentMethod: payment,
-        itemsPrice: priceMemo,
-        shippingPrice: diliveryPriceMemo,
-        totalPrice: totalPriceMemo,
-        user: user?.id,
-        isPaid: true,
-        paidAt: details.update_time,
-        email: user?.email
-      }
-    )
-  }
+  // const onSuccessPaypal = (details, data) => {
+  //   mutationAddOrder.mutate(
+  //     {
+  //       token: user?.access_token,
+  //       orderItems: order?.orderItemsSlected,
+  //       fullName: user?.name,
+  //       address: user?.address,
+  //       phone: user?.phone,
+  //       city: user?.city,
+  //       paymentMethod: payment,
+  //       itemsPrice: priceMemo,
+  //       shippingPrice: diliveryPriceMemo,
+  //       totalPrice: totalPriceMemo,
+  //       user: user?.id,
+  //       isPaid: true,
+  //       paidAt: details.update_time,
+  //       email: user?.email
+  //     }
+  //   )
+  // }
 
 
   const handleUpdateInforUser = () => {
@@ -299,14 +297,6 @@ const PaymentPage = () => {
               </div>
               {payment === 'paypal' && sdkReady ? (
                 <div style={{ width: '320px' }}>
-                  {/* <PayPalButton
-                    amount={Math.round(totalPriceMemo / 30000)}
-                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                    onSuccess={onSuccessPaypal}
-                    onError={() => {
-                      alert('Erroe')
-                    }}
-                  /> */}
                 </div>
               ) : (
                 <ButtonComponent

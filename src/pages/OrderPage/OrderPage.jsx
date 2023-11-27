@@ -2,7 +2,6 @@ import { Checkbox, Form } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { CustomCheckbox, WrapperCountOrder, WrapperInfo, WrapperItemOrder, WrapperLeft, WrapperListOrder, WrapperRight, WrapperStyleHeader, WrapperStyleHeaderDilivery, WrapperTotal } from './style';
 import { DeleteOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons'
-
 import { WrapperInputNumber } from '../../components/ProductDetailsComponent/style';
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 import { useDispatch, useSelector } from 'react-redux';
@@ -135,7 +134,7 @@ const OrderPage = () => {
 
   const handleAddCard = () => {
     if (!order?.orderItemsSlected?.length) {
-      message.error('Vui lòng chọn sản phẩm')
+      message.error('Please choose a product to add to cart')
     } else if (!user?.phone || !user.address || !user.name || !user.city) {
       setIsOpenModalUpdateInfo(true)
     } else {
@@ -167,6 +166,7 @@ const OrderPage = () => {
     form.resetFields()
     setIsOpenModalUpdateInfo(false)
   }
+
   const handleUpdateInforUser = () => {
     const { name, address, city, phone } = stateUserDetails
     if (name && address && city && phone) {
@@ -199,6 +199,7 @@ const OrderPage = () => {
       description: 'Above 500.000 VND',
     },
   ]
+
   return (
     <div style={{ background: '#f5f5fa', with: '100%', height: '100vh' }}>
       <div style={{ height: '100%', width: '1270px', margin: '0 auto' }}>
@@ -223,6 +224,7 @@ const OrderPage = () => {
                 <DeleteOutlined style={{ cursor: 'pointer' }} onClick={handleRemoveAllOrder} />
               </div>
             </WrapperStyleHeader>
+
             <WrapperListOrder>
               {order?.orderItems?.map((order) => {
                 return (
@@ -257,6 +259,7 @@ const OrderPage = () => {
                 )
               })}
             </WrapperListOrder>
+
           </WrapperLeft>
           <WrapperRight>
             <div style={{ width: '100%' }}>
