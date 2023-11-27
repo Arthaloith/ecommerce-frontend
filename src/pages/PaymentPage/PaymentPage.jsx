@@ -196,26 +196,6 @@ const PaymentPage = () => {
     setPayment(e.target.value)
   }
 
-  const addPaypalScript = async () => {
-    const { data } = await PaymentService.getConfig()
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.src = `https://www.paypal.com/sdk/js?client-id=${data}`
-    script.async = true;
-    script.onload = () => {
-      setSdkReady(true)
-    }
-    document.body.appendChild(script)
-  }
-
-  useEffect(() => {
-    if (!window.paypal) {
-      addPaypalScript()
-    } else {
-      setSdkReady(true)
-    }
-  }, [])
-
   return (
     <div style={{ background: '#f5f5fa', with: '100%', height: '100vh' }}>
       <Loading isLoading={isLoadingAddOrder}>
@@ -228,7 +208,7 @@ const PaymentPage = () => {
                   <Lable style={{ fontWeight: 'bold', fontSize: '20px' }}>Delivery service</Lable>
                   <WrapperRadio onChange={handleDilivery} value={delivery}>
                     <Radio value="fast"><span style={{ color: '#ea8500', fontWeight: 'bold' }}>FAST</span> Amogus deliveries</Radio>
-                    <Radio value="gojek"><span style={{ color: '#ea8500', fontWeight: 'bold' }}>GO_JEK</span> Sus deliveries</Radio>
+                    <Radio value="gojek"><span style={{ color: '#ea8500', fontWeight: 'bold' }}>GO_DIE</span> Sus deliveries</Radio>
                   </WrapperRadio>
                 </div>
               </WrapperInfo>
